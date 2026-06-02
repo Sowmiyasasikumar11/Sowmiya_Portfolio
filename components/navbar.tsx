@@ -36,19 +36,19 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="flex items-center justify-end h-20">
+        <div className="flex items-center justify-end h-14">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-[17px] font-semibold"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-semibold"
               >
                 {link.name}
               </a>
             ))}
-            <Button size="default" className="bg-primary hover:bg-primary/80 px-7 py-3 text-[17px] font-semibold h-auto">
+            <Button size="sm" className="bg-primary hover:bg-primary/80 px-5 py-2 text-sm font-semibold h-auto">
               <a href="#contact">Hire Me</a>
             </Button>
           </div>
