@@ -15,7 +15,7 @@
   --secondary: oklch(0.18 0.02 270);
   --secondary-foreground: oklch(0.95 0.01 270);
   --muted: oklch(0.2 0.015 270);
-  --muted-foreground: oklch(0.6 0.02 270);
+  --muted-foreground: oklch(0.62 0.02 270);
   --accent: oklch(0.55 0.18 280);
   --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.55 0.22 25);
@@ -28,7 +28,7 @@
   --chart-3: oklch(0.7 0.15 200);
   --chart-4: oklch(0.75 0.12 180);
   --chart-5: oklch(0.6 0.2 300);
-  --radius: 0.75rem;
+  --radius: 0.875rem;
   --sidebar: oklch(0.1 0.015 270);
   --sidebar-foreground: oklch(0.95 0.01 270);
   --sidebar-primary: oklch(0.65 0.2 250);
@@ -51,7 +51,7 @@
   --secondary: oklch(0.18 0.02 270);
   --secondary-foreground: oklch(0.95 0.01 270);
   --muted: oklch(0.2 0.015 270);
-  --muted-foreground: oklch(0.6 0.02 270);
+  --muted-foreground: oklch(0.62 0.02 270);
   --accent: oklch(0.55 0.18 280);
   --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.55 0.22 25);
@@ -121,20 +121,41 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-size: 16px;
   }
   html {
     scroll-behavior: smooth;
+  }
+  ::selection {
+    background: rgba(59, 130, 246, 0.35);
+    color: white;
+  }
+  /* Wider container override */
+  .container {
+    max-width: 1400px !important;
   }
 }
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent;
   }
   .glow-card {
-    box-shadow: 0 0 30px -5px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 28px -4px rgba(59, 130, 246, 0.2), 0 0 0 1px rgba(59, 130, 246, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
   }
   .glow-card:hover {
-    box-shadow: 0 0 40px -5px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 8px 48px -6px rgba(59, 130, 246, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.18);
+    transform: translateY(-3px);
+  }
+  .section-heading {
+    @apply text-4xl sm:text-5xl font-bold mt-3 mb-5;
+  }
+  .section-label {
+    @apply text-primary text-sm font-semibold tracking-widest uppercase;
+  }
+  .section-divider {
+    @apply w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full;
   }
 }

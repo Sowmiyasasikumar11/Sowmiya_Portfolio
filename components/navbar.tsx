@@ -35,20 +35,20 @@ export function Navbar() {
         scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-end h-16">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="flex items-center justify-end h-20">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-[17px] font-semibold"
               >
                 {link.name}
               </a>
             ))}
-            <Button size="sm" className="bg-primary hover:bg-primary/80">
+            <Button size="default" className="bg-primary hover:bg-primary/80 px-7 py-3 text-[17px] font-semibold h-auto">
               <a href="#contact">Hire Me</a>
             </Button>
           </div>
@@ -74,7 +74,7 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border"
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-6 py-5 space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}

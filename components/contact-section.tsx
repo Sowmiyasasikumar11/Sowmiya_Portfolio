@@ -1,90 +1,81 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Github, Linkedin } from "lucide-react"
+import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react"
 
 const contactLinks = [
   {
     name: "Email",
     icon: Mail,
     href: "mailto:sowmiya110307@gmail.com",
-    label: "sowmiya110307@gmail.com"
+    label: "sowmiya110307@gmail.com",
+    external: false,
   },
   {
     name: "GitHub",
     icon: Github,
     href: "https://github.com/Sowmiyasasikumar11",
-    label: "github.com/Sowmiyasasikumar11"
+    label: "github.com/Sowmiyasasikumar11",
+    external: true,
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
     href: "https://www.linkedin.com/in/sowmiya-m-s/",
-    label: "linkedin.com/in/sowmiya-m-s"
-  }
+    label: "linkedin.com/in/sowmiya-m-s",
+    external: true,
+  },
 ]
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 sm:py-32 relative bg-card/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 sm:py-36 relative">
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+      <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase">Contact</span>
-          <h2 className="text-3xl sm:text-4xl font-bold mt-2 mb-4">
-            Let&apos;s Work Together
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
-          <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-            Have a project in mind or want to discuss opportunities? I&apos;d love to hear from you!
+          <span className="text-primary text-lg font-semibold tracking-widest uppercase">Contact</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 mb-6">Let&apos;s Work Together</h2>
+          <div className="w-32 h-1.5 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 mx-auto rounded-full shadow-[0_0_12px_rgba(59,130,246,0.7)]" />
+          <p className="text-muted-foreground mt-6 max-w-xl mx-auto text-lg leading-relaxed">
+            Open to internships, collaborations, and exciting opportunities. Feel free to reach out
+            — I typically respond within 24 hours.
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-xl mx-auto"
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold mb-2">Get in Touch</h3>
-            <p className="text-muted-foreground">
-              Feel free to reach out through any of the following platforms. 
-              I typically respond within 24 hours.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {contactLinks.map((link, index) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                whileHover={{ x: 5 }}
-                className="flex items-center gap-4 p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all group"
-              >
-                <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <link.icon className="h-5 w-5" />
+        <div className="max-w-2xl mx-auto space-y-5">
+          {contactLinks.map((link, index) => (
+            <motion.a
+              key={link.name}
+              href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.1 }}
+              whileHover={{ x: 7 }}
+              className="flex items-center justify-between p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 glow-card group"
+            >
+              <div className="flex items-center gap-5">
+                <div className="p-3.5 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <link.icon className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="font-medium">{link.name}</p>
-                  <p className="text-sm text-muted-foreground">{link.label}</p>
+                  <p className="font-semibold text-base">{link.name}</p>
+                  <p className="text-base text-muted-foreground mt-0.5">{link.label}</p>
                 </div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
+              </div>
+              <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors duration-300 shrink-0" />
+            </motion.a>
+          ))}
+        </div>
       </div>
     </section>
   )
