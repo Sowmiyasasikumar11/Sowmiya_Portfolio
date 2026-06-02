@@ -23,7 +23,7 @@ const codingProfiles = [
 
 export function CodingProfilesSection() {
   return (
-    <section className="py-24 sm:py-36 relative bg-card/25">
+    <section className="py-16 sm:py-24 relative bg-card/25">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
       <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         <motion.div
@@ -31,10 +31,10 @@ export function CodingProfilesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-14"
         >
-          <span className="text-primary text-lg font-semibold tracking-widest uppercase">Coding Profiles</span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 mb-6">Competitive Programming</h2>
+          <span className="text-primary text-sm font-semibold tracking-widest uppercase">Coding Profiles</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 mb-5">Competitive Programming</h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 mx-auto rounded-full shadow-[0_0_12px_rgba(59,130,246,0.7)]" />
         </motion.div>
 

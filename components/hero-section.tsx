@@ -17,11 +17,10 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.045)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       {/* Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/6 w-[600px] h-[600px] bg-blue-500/12 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/6 w-[500px] h-[500px] bg-cyan-500/12 rounded-full blur-3xl animate-pulse delay-1000" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/6 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-2xl" />
+      <div className="absolute bottom-1/4 right-1/6 w-[350px] h-[350px] bg-cyan-500/10 rounded-full blur-2xl" />
 
-      <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 py-28">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 py-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 xl:gap-28">
 
           {/* ── Left: Text Content ── */}
@@ -35,7 +34,7 @@ export function HeroSection() {
 
             <motion.h1
               {...fadeUp(0.1)}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-[1.05] tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-[1.05] tracking-tight"
             >
               Hi, I&apos;m{" "}
               <span className="gradient-text whitespace-nowrap">Sowmiya M S</span>
@@ -43,14 +42,14 @@ export function HeroSection() {
 
             <motion.p
               {...fadeUp(0.2)}
-              className="text-2xl sm:text-3xl font-semibold text-primary/85 mb-6 tracking-wide"
+              className="text-lg sm:text-xl font-semibold text-primary/85 mb-5 tracking-wide"
             >
               Full Stack &amp; AI Developer
             </motion.p>
 
             <motion.p
               {...fadeUp(0.3)}
-              className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-[620px] mx-auto lg:mx-0 leading-relaxed"
+              className="text-base sm:text-lg text-muted-foreground mb-10 max-w-[620px] mx-auto lg:mx-0 leading-relaxed"
             >
               A 3rd-year Computer Science Engineering student passionate about Full Stack
               Development and Artificial Intelligence. I enjoy building scalable web applications,
@@ -125,7 +124,7 @@ export function HeroSection() {
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.35 }}
-                  className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[420px] lg:h-[420px] xl:w-[460px] xl:h-[460px] rounded-full overflow-hidden bg-background"
+                  className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px] xl:w-[400px] xl:h-[400px] rounded-full overflow-hidden bg-background"
                 >
                   <Image
                     src="/profile.png"
